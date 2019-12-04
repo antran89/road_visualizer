@@ -13,3 +13,6 @@ For DeepGlobe dataset:
 java -jar visualizerDG.jar -params ./data/paramsDG.txt
 ```
 Please change the corresponding parameters in `paramsDG.txt` to the image folder, ground truth, and mask prediction.
+The following image shows a screenshot of a APLS visualization:
+
+![APLS visualizer](visualizer_example.png)
