@@ -282,6 +282,7 @@ public class RoadVisualizerDG implements ActionListener, ItemListener, MouseList
 	private String[] collectImageIds() {
 		Set<String> ids = new HashSet<>();
 		idToDir = new HashMap<>();
+		log(" - ImageDir: " + imageDirs[0]);
 		if (imageDirs != null) {
 			for (String dirName: imageDirs) {
 				File dir = new File(dirName);
@@ -290,9 +291,11 @@ public class RoadVisualizerDG implements ActionListener, ItemListener, MouseList
 					continue;
 				}
 				for (String s: dir.list()) {
-					if (!s.endsWith(".png")) continue;
+					//if (!s.endsWith(".png")) continue;
 					s = s.replace(".png", "");
 					s = s.replace("PAN_", "");
+					s = s.replace(".jpg", "");
+					s = s.replace("sat", "mask");
 					ids.add(s);
 					idToDir.put(s, dirName);
 				}
